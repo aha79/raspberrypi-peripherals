@@ -1,0 +1,21 @@
+ -658 us (cyc: -10.0): CHECKPOINT Enable SPI pins (FSEL==Alt0)
+ -656 us (cyc: -10.0): CHECKPOINT Set SPI freq (divider == 65535)
+ -654 us (cyc: -10.0): CHECKPOINT Clear SPI, RDREQ==TDREQ==2, DLEN == 0, CPHA==0
+ -654 us (cyc: -10.0): CHECKPOINT Clear fifo
+ -654 us (cyc: -10.0): CHECKPOINT Start collecting
+ -148 us (cyc: -2.3) event 0:
+		SPI.CS = LEN_LONG(0) | DMA_LEN(0) | CSPOL2(0) | CSPOL1(0) | CSPOL0(0) | RXF(0) | RXR(0) | TXD(1) | RXD(0) | DONE(0) | TE_EN(0) | LMONO(0) | LEN(0) | REN(0) | ADCS(0) | INTR(0) | INTD(0) | DMAEN(0) | TA(0) | CSPOL(0) | CLEAR_TX(0) | CLEAR_RX(0) | CPOL(0) | CPHA(1) | CS(0)
+		DMA.DLEN = LEN(0)
+		GPIO =  | LEV8_SPICS0(1) | LEV9_SPIMISO(0) | LEV10_SPIMOSI(0) | LEV11_SPICLK(0)
+    0 us (cyc: 0.0): CHECKPOINT Set DMAEN+ADCS
+    0 us (cyc: 0.0): CHECKPOINT Set DLEN == 0
+    0 us (cyc: 0.0): CHECKPOINT Enable SPI TA
+    3 us (cyc: 0.0) event 1:
+		SPI.CS |=  | DONE(1) | ADCS(1) | DMAEN(1)
+		DMA.DLEN <same>
+		GPIO <same>
+ 1079 us (cyc: 16.5): CHECKPOINT Disable SPI TA
+ 1083 us (cyc: 16.5) event 2:
+		SPI.CS |=  | DONE(0)
+		DMA.DLEN <same>
+		GPIO <same>

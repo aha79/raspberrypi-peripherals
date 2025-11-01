@@ -2,9 +2,9 @@
 
 This document is a collection of information missing in the official datasheet of the [Raspberry PI 4 peripherals](https://datasheets.raspberrypi.com/bcm2711/bcm2711-peripherals.pdf). All tests were carried out with a Raspberry PI 4.
 
-This is based on extensive experimentation, reverse engineering to somewhat extend.
+This is based on extensive experimentation. While the experimental raw data is provided in the subdirectory [data](data/) the conclusions could be wrong or mistakes could be contained in this writing.
 
-Basically the idea is to operate the peripherals at very low clock rate and observe their output pins by polling the GPLEV register in a high priority thread. This works provided the GPIO FSEL alt pin assignment is properly set-up. Regardless whether the pin is an input or output, we can always read the current pin level from the GPLEV register. 
+For the experiments the basic idea is to operate the peripherals at very low clock rate and observe their output pins by polling the GPLEV register in a high priority thread. This works provided the GPIO FSEL alt pin assignment is properly set-up. Regardless whether the pin is an input or output, we can always read the current pin level from the GPLEV register. 
 This is evident from the Figure 4 on p. 65 in the  [Datasheet](https://datasheets.raspberrypi.com/bcm2711/bcm2711-peripherals.pdf).
 
 So we can make a "software only logic analyzer".
@@ -101,7 +101,7 @@ Tx-FIFO         0     |1|                                      0
                                   ____      ____      ____      ____      ____      ____      ____      ____
 SCLK*     _______________________|    |____|    |____|    |____|    |____|    |____|    |____|    |____|    |_________________
 MOSI                     0  |    D7   |    D6   |    D5   |    D4   |    D3   |    D2   |    D1   |    D0   |  0    
-MISO      0 |           D'7           |    D'6  |    D'5  |    D'4  |    D'3  |    D'2  |    D'1  |    D'0  |  D2'7 (if any)   
+MISO      0 |           D'7           |    D'6  |    D'5  |    D'4  |    D'3  |    D'2  |    D'1  |    D'0  |  D2'7 (*)| 0   
 Rx-FIFO                                                        0                                       | 1         
 ``` 
 There is a brief write to the tx-fifo, which sets DONE=0 and starts the transmission. The Rx-FIFO is filled one half cycle before DONE
@@ -126,6 +126,10 @@ DONE is a sticky bit. Even if the DLEN register is changed during an active tran
 
 - Writing to DLEN resets the internal state machine, in the sense that new bytes can be transmitted. This however does not reset DONE.
 
+### DLEN register
+
+After each byte has been transmitted, the DLEN register is decremented by one. When DLEN reaches 0, the transfer is considered finished and DONE is set to 1.
+
 ### RXD
 
 This bit means that the rx-fifo is non-empty, i.e. contains at least one byte.
@@ -149,6 +153,54 @@ The fifo level at which a write DREQ signal is generated. The datasheet is accur
     TX-DREQ = ( number-of-bytes-in-tx-fifo <= TDREQ )
 
 
+#### Diagram for CPHA == 1:
+Here we set DLEN == 2.
+
+``` 
+          ____________                                                 ___________
+DONE                  |_______________________________________________|           |_____
+             _____________________________________________________________________
+TA        __|                                                                     |_____
+
+Tx-FIFO         0     |4|        3          |      2                                                             
+DLEN      2                                 |      1        |      0                                                  
+                             ____       ____      ____       ____      
+SCLK*     __________________|    | ... |    |____|    | ... |    |_______________________
+MOSI                     0  |     D7 ... D0      |   D2 7 ... D2 0    |  0    
+MISO                     0  |    D'7 ... D'0     |   D2'7 ... D2'0                |  0     
+Rx-FIFO           0                         | 1             |    2
+``` 
+There is a brief write to the tx-fifo, which adds 4 bytes, sets DONE=0 and starts the transmission. 
+With every complete byte received DLEN is decremented and one byte written to the fifo. Note that there is still two bytes in the tx-fifo after the transmission ended!
+
+If ADCS were set, the TA would automatically be set to zero when DONE == 1.
+
+* Note SCLK is shown for CPOL == 0. For CPOL == 1 it is same but inverted.
+
+#### Diagram for CPHA == 0:
+``` 
+          ____________                                                 ___________
+DONE                  |_______________________________________________|           |_____
+             _____________________________________________________________________
+TA        __|                                                                     |_____
+
+Tx-FIFO         0     |4|        3          |      2                                                             
+DLEN      2                                 |      1        |      0                                                  
+                                  ____       ____      ____       ____      
+SCLK*     _______________________|    | ... |    |____|    | ... |    |_______________________
+MOSI                 0      |     D7 ... D0      |   D2 7 ... D2 0    |  0    
+MISO                  |          D'7 ... D'0     |   D2'7 ... D2'0    |  D3'7     | 0       
+Rx-FIFO           0                         | 1             |    2
+``` 
+
+There is a brief write to the tx-fifo, which adds 4 bytes, sets DONE=0 and starts the transmission. 
+With every complete byte received DLEN is decremented and one byte written to the fifo. Note that there is still two bytes in the tx-fifo after the transmission ended. 
+
+If ADCS were set, the TA would automatically be set to zero when DONE == 1.
+
+* Note SCLK is shown for CPOL == 0. For CPOL == 1 it is same but inverted.
+
+
 ## PWM Controller (RP4)
 
 ### DMAC.DREQ definition
@@ -159,19 +211,51 @@ By experimentation it was found that
 ``` 
 DREQ-signal = number-of-words-in-fifo < DMAC.DREQ
 ``` 
+The DMAC signal is not a trigger, but a signal that is set as long as the condition prevails.
 
-Setting DMAC.DREQ will not activate the DMA at all and no data is transmitted at any time.
+Setting DMAC.DREQ=0 will not activate the DMA at all and no data is transmitted at any time.
 
-This can be verified by observing the number of 32bit DMA transfers to the FIF register with a certain DMAC.DREQ setting and PWM engine being off. With DMAC.DREQ == N we observe exactly N DMA transfers (which does put N words in the FIFO and then the process stops).
+This can be verified by observing the number of 32bit DMA transfers to the FIF register with a certain DMAC.DREQ setting and PWM engine being off (PWEN == 0, but DMA and USEF being configured). With DMAC.DREQ == N we observe exactly immediate N DMA transfers (which does put N words in the FIFO and then the process stops). When the PWM is enabled (PWEN =1) this triggers additional FIFO loads.
 
 Note that this definition is different from the fifo threshold definition in other peripherals. The SPI controller has '<=' instead of '<', so there is inconsistency. Also for PWM the threshold is number of 32 bit words and for SPI it is number of bytes. (This is apparently because the SPI fifo is a byte fifo and for PWM it is 32 bit fifo, but the datasheet does not spell this out very clearly). 
 
+## FIF register
+
+The fifo is written to by writing a 32 bit word to the FIF register.
+
+
+## FIFO
+
+### Writing to the fifo
+- By writing to the FIF register.
+- Whenever the fifo is empty the EMPT1 bit is set and it is cleared when the fifo is non-empty.
+- If DMAC is enabled, the DREQ signal gets set, when the number of words in the fifo falls below the threshold (see above). The DMAC signal is not a trigger, but a signal that is set as long as the condition prevails. 
+- DMAC get set even if the pwm generation is not enabled (PWEN), so when the DMA is properly configured, the fifo is filled up to the DMAC threshold before at the time when PWEN will get set.
+
+### Reading from the FIFO
+
+The PWM engine starts reading from the fifo when the PWEN bit gets set. The amount of words depends on the opeation mode.
+
+Upon enablement of the PWM the PWM engine will read the following amount of words from the FIFO
+
+| Mode  | FIFO reads upon PWM start | Duplicate anomaly |  Last word repeated indefinitely |
+|----|---|----|----|
+| Single Channel, RPT=0, fifo level=1  |  1 (4 bytes) | No | **Yes** | 
+| Single Channel, RPT=0, fifo level>1  |  2 (8 bytes) | No | **Yes** | 
+| Single Channel RPT=1 | 1 (4 bytes) | **Yes, first word** | Yes |
+| Dual Channel, RPT=0, fifo level=2 | 2 (8 bytes), one sample for each channel | No | No (Stops after one PWM sample) |
+| Dual Channel, RPT=0, fifo level>3 | 4 (16 bytes), two samples for each channel | No | No |
+| Dual Channel, RPT=1  | 2 (8 bytes), two for each channel | **Yes, every word is duplicated** | Yes  |
+
+Bold marks incorrect or buggy behavior.
+
+It seems that the PWM engine has one additional word buffer besides the fifo. This explains why two words are loaded from the fifo upon PWM start (if there are at least two words in the fifo, or only one if there is only one). One word becomes the currently generated sample and the additional buffer receives the second word. So there is kind of a 1 word internal fifo in the pwm engine. However, the behavior seems to be odd with the RPT functionality. Sometimes, pwm samples are duplicated, i.e. generated twice even though it should not happen. 
 
 ### Note regarding the RPT1 and RPT2 bits 
 
-The repeat last word functionality is broken, and does not work as intended.
+The repeat last word functionality seems broken, as it apparently does not work as intended.
 
 - If only a single channel is enabled (so we only have CTL.PWEN1 set, but not CTL.PWEN2 set for instance) the CTL.RPTL1/2 bits are ignored. The last word is ALWAYS repeated. STA.STA1 will remain high (as the PWM never stops)
 
 - Contrary to one channel operation the RPTL=0 is working for two channel case: the PWM stops after N'th sample and sets STA.STA2=STA.STA1=0 (as well as sets STA.GAPO2=STA:GAPO1=1 to indicate gaps during transfer.
-The CTL.RPTL1=CTL.RPTL2=1 are not supported in two channel mode and are ignored: The PWM stops in this case as well. This is written in the data sheet.
+The CTL.RPTL1=CTL.RPTL2=1 are not supported in two channel mode.

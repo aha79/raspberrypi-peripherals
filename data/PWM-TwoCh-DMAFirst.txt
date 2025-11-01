@@ -1,0 +1,95 @@
+-2796 us (cyc: -5.6): CHECKPOINT Set PWM clock to 10MHz (via PLLD)
+-2664 us (cyc: -5.3): CHECKPOINT Reset PWM regs (CTL = 0, STA = 0xffff ffff)
+-2444 us (cyc: -4.9): CHECKPOINT Reset DMA (DMA6)
+-2375 us (cyc: -4.8): CHECKPOINT Set RNG to 10'000 (=>1 kHz)
+-2375 us (cyc: -4.8): CHECKPOINT Enable DMAC wth PANIC == DREQ == 2
+-2374 us (cyc: -4.7): CHECKPOINT Clear FIFO (CTL = CRLF)
+-2308 us (cyc: -4.6): CHECKPOINT MSEN1(Alg_M_S) + USEF1(Reg_FIFO) + MSEN2(Alg_M_S) + USEF2(Reg_FIFO)
+-2308 us (cyc: -4.6): CHECKPOINT Enable GPIO 12 to PWM0 (Alt0)
+-2305 us (cyc: -4.6): CHECKPOINT Make 5 element DMA CB chain (8 byte EA) (PWM values == 90%, 10%, 90% ....)
+-2303 us (cyc: -4.6): CHECKPOINT Start collection
+-2133 us (cyc: -4.3) event 0:
+		PWM.STA = STA2(0) | STA1(0) | BERR(0) | GAPO2(0) | GAPO1(0) | RERR1(0) | WERR1(0) | EMPT1(1) | FULL1(0)
+		PWM.CTL = MSEN2(Alg_M_S) | USEF2(Reg_FIFO) | POLA2(0) | SBIT2(0) | RPTL2(0) | MODE2(Mode_PWM) | PWEN2(0) | MSEN1(Alg_M_S) | CLRF(0) | USEF1(Reg_FIFO) | POLA1(0) | SBIT1(0) | RPTL1(0) | MODE1(Mode_PWM) | PWEN1(0)
+		DMA.CS = RESET(0) | ABORT(0) | DISDEBUG(0) | WAIT_FOR_OUTSTANDING_WRITES(0) | ERROR(0) | WAITING_FOR_OUTSTANDING_WRITES(0) | DREQ_STOPS_DMA(0) | PAUSED(0) | DREQ(1) | INT(0) | END(0) | ACTIVE(0) | PANIC_PRIORITY(0) | PRIORITY(0)
+		DMA.DEBUG = LITE(0) | READ_ERROR(0) | FIFO_ERROR(0) | READ_LAST_NOT_SET_ERROR(0) | VERSION(2) | DMA_STATE(1) | DMA_ID(134) | OUTSTANDING_WRITES(0)
+		GPIO =  | LEV12(0)
+-1066 us (cyc: -2.1): CHECKPOINT DMA Start
+-1065 us (cyc: 8589933.0): 0  DMA CB Completed
+-1064 us (cyc: -2.1) event 1:
+		PWM.STA |=  | EMPT1(0)
+		PWM.CTL <same>
+		DMA.CS |=  | DISDEBUG(1) | WAIT_FOR_OUTSTANDING_WRITES(1) | DREQ_STOPS_DMA(1) | DREQ(0) | END(1) | ACTIVE(1) | PANIC_PRIORITY(8) | PRIORITY(8)
+		DMA.DEBUG |= 
+		GPIO <same>
+    0 us (cyc: 0.0): CHECKPOINT PWEN1 + PWEN2
+    1 us (cyc: 0.0): 1  DMA CB Completed
+    2 us (cyc: 0.0): 2  DMA CB Completed
+    3 us (cyc: 0.0) event 2:
+		PWM.STA |= STA2(1) | STA1(1)
+		PWM.CTL |= MSEN2(Alg_M_S) | USEF2(Reg_FIFO) | MODE2(Mode_PWM) | PWEN2(1) | MSEN1(Alg_M_S) | USEF1(Reg_FIFO) | MODE1(Mode_PWM) | PWEN1(1)
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+  906 us (cyc: 1.8) event 3:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+ 1001 us (cyc: 2.0): 3  DMA CB Completed
+ 1005 us (cyc: 2.0) event 4:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+ 1104 us (cyc: 2.2) event 5:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+ 2001 us (cyc: 4.0): 4  DMA CB Completed
+ 2004 us (cyc: 4.0) event 6:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS |=  | DREQ_STOPS_DMA(0) | DREQ(1) | ACTIVE(0) | PANIC_PRIORITY(8) | PRIORITY(8)
+		DMA.DEBUG |= 
+		GPIO |=  | LEV12(1)
+ 2902 us (cyc: 5.8) event 7:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+ 3002 us (cyc: 6.0) event 8:
+		PWM.STA |=  | EMPT1(1)
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+ 3106 us (cyc: 6.2) event 9:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+ 4006 us (cyc: 8.0) event 10:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+ 4902 us (cyc: 9.8) event 11:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+ 5006 us (cyc: 10.0) event 12:
+		PWM.STA |= STA2(0) | STA1(0) | GAPO2(1) | GAPO1(1)
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO <same>

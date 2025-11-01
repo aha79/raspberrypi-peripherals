@@ -1,0 +1,356 @@
+ -401 us (cyc: -6.1): CHECKPOINT Enable SPI pins (FSEL==Alt0)
+ -400 us (cyc: -6.1): CHECKPOINT Set SPI freq (divider == 65535)
+ -399 us (cyc: -6.1): CHECKPOINT Clear SPI, RDREQ==TDREQ==2, DLEN == 0, CPHA==0
+ -399 us (cyc: -6.1): CHECKPOINT Clear fifo
+ -399 us (cyc: -6.1): CHECKPOINT Start collecting
+ -203 us (cyc: -3.1) event 0:
+		SPI.CS = LEN_LONG(0) | DMA_LEN(0) | CSPOL2(0) | CSPOL1(0) | CSPOL0(0) | RXF(0) | RXR(0) | TXD(1) | RXD(0) | DONE(0) | TE_EN(0) | LMONO(0) | LEN(0) | REN(0) | ADCS(0) | INTR(0) | INTD(0) | DMAEN(0) | TA(0) | CSPOL(0) | CLEAR_TX(0) | CLEAR_RX(0) | CPOL(0) | CPHA(1) | CS(0)
+		DMA.DLEN = LEN(0)
+		GPIO =  | LEV8_SPICS0(1) | LEV9_SPIMISO(0) | LEV10_SPIMOSI(0) | LEV11_SPICLK(0)
+   -1 us (cyc: -0.0): CHECKPOINT Set DMAEN
+   -1 us (cyc: -0.0): CHECKPOINT Set DLEN == 5
+   -1 us (cyc: -0.0): CHECKPOINT Enable SPI TA
+    2 us (cyc: 0.0) event 1:
+		SPI.CS |=  | DMAEN(1) | TA(1)
+		DMA.DLEN |= LEN(5)
+		GPIO |=  | LEV8_SPICS0(0)
+ 1071 us (cyc: 16.3): CHECKPOINT Fifo 4byte write 0x115500ff
+ 1152 us (cyc: 17.6) event 2:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(1) | LEV11_SPICLK(1)
+ 1217 us (cyc: 18.6) event 3:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 1280 us (cyc: 19.5) event 4:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 1345 us (cyc: 20.5) event 5:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 1417 us (cyc: 21.6) event 6:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 1482 us (cyc: 22.6) event 7:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 1546 us (cyc: 23.6) event 8:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 1611 us (cyc: 24.6) event 9:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 1675 us (cyc: 25.6) event 10:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 1741 us (cyc: 26.6) event 11:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 1806 us (cyc: 27.6) event 12:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 1871 us (cyc: 28.5) event 13:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 1936 us (cyc: 29.5) event 14:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 2000 us (cyc: 30.5) event 15:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 2073 us (cyc: 31.6) event 16:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 2137 us (cyc: 32.6) event 17:
+		SPI.CS |=  | RXD(1)
+		DMA.DLEN |= LEN(4)
+		GPIO |=  | LEV11_SPICLK(0)
+ 2201 us (cyc: 33.6) event 18:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(0) | LEV11_SPICLK(1)
+ 2265 us (cyc: 34.6) event 19:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 2352 us (cyc: 35.9) event 20:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 2397 us (cyc: 36.6) event 21:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 2459 us (cyc: 37.5) event 22:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 2529 us (cyc: 38.6) event 23:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 2590 us (cyc: 39.5) event 24:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 2659 us (cyc: 40.6) event 25:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 2726 us (cyc: 41.6) event 26:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 2787 us (cyc: 42.5) event 27:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 2857 us (cyc: 43.6) event 28:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 2918 us (cyc: 44.5) event 29:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 2987 us (cyc: 45.6) event 30:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 3054 us (cyc: 46.6) event 31:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 3119 us (cyc: 47.6) event 32:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 3180 us (cyc: 48.5) event 33:
+		SPI.CS <same>
+		DMA.DLEN |= LEN(3)
+		GPIO |=  | LEV11_SPICLK(0)
+ 3248 us (cyc: 49.6) event 34:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 3316 us (cyc: 50.6) event 35:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 3378 us (cyc: 51.5) event 36:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(1) | LEV11_SPICLK(1)
+ 3445 us (cyc: 52.6) event 37:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 3508 us (cyc: 53.5) event 38:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(0) | LEV11_SPICLK(1)
+ 3575 us (cyc: 54.6) event 39:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 3644 us (cyc: 55.6) event 40:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(1) | LEV11_SPICLK(1)
+ 3706 us (cyc: 56.5) event 41:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 3773 us (cyc: 57.6) event 42:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(0) | LEV11_SPICLK(1)
+ 3837 us (cyc: 58.5) event 43:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 3904 us (cyc: 59.6) event 44:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(1) | LEV11_SPICLK(1)
+ 3967 us (cyc: 60.5) event 45:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 4035 us (cyc: 61.6) event 46:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(0) | LEV11_SPICLK(1)
+ 4110 us (cyc: 62.7) event 47:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 4165 us (cyc: 63.6) event 48:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(1) | LEV11_SPICLK(1)
+ 4230 us (cyc: 64.5) event 49:
+		SPI.CS <same>
+		DMA.DLEN |= LEN(2)
+		GPIO |=  | LEV11_SPICLK(0)
+ 4297 us (cyc: 65.6) event 50:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(0) | LEV11_SPICLK(1)
+ 4360 us (cyc: 66.5) event 51:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 4427 us (cyc: 67.6) event 52:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 4495 us (cyc: 68.6) event 53:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 4557 us (cyc: 69.5) event 54:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 4626 us (cyc: 70.6) event 55:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 4687 us (cyc: 71.5) event 56:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(1) | LEV11_SPICLK(1)
+ 4754 us (cyc: 72.5) event 57:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 4818 us (cyc: 73.5) event 58:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(0) | LEV11_SPICLK(1)
+ 4885 us (cyc: 74.5) event 59:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 4954 us (cyc: 75.6) event 60:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 5015 us (cyc: 76.5) event 61:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 5084 us (cyc: 77.6) event 62:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 5150 us (cyc: 78.6) event 63:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 5213 us (cyc: 79.5) event 64:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(1) | LEV11_SPICLK(1)
+ 5280 us (cyc: 80.6) event 65:
+		SPI.CS <same>
+		DMA.DLEN |= LEN(1)
+		GPIO |=  | LEV11_SPICLK(0)
+ 5347 us (cyc: 81.6) event 66:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(0)
+ 7148 us (cyc: 109.1): CHECKPOINT Fifo read
+ 7148 us (cyc: 109.1): CHECKPOINT Second Fifo 4byte write 0x55
+ 7153 us (cyc: 109.1) event 67:
+		SPI.CS |=  | RXD(0)
+		DMA.DLEN <same>
+		GPIO <same>
+ 7245 us (cyc: 110.6) event 68:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(1)
+ 7312 us (cyc: 111.6) event 69:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 7379 us (cyc: 112.6) event 70:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(1) | LEV11_SPICLK(1)
+ 7444 us (cyc: 113.6) event 71:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 7506 us (cyc: 114.5) event 72:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(0) | LEV11_SPICLK(1)
+ 7573 us (cyc: 115.6) event 73:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 7640 us (cyc: 116.6) event 74:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(1) | LEV11_SPICLK(1)
+ 7706 us (cyc: 117.6) event 75:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 7774 us (cyc: 118.6) event 76:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(0) | LEV11_SPICLK(1)
+ 7836 us (cyc: 119.6) event 77:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 7903 us (cyc: 120.6) event 78:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(1) | LEV11_SPICLK(1)
+ 7969 us (cyc: 121.6) event 79:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 8029 us (cyc: 122.5) event 80:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(0) | LEV11_SPICLK(1)
+ 8096 us (cyc: 123.5) event 81:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV11_SPICLK(0)
+ 8164 us (cyc: 124.6) event 82:
+		SPI.CS <same>
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(1) | LEV11_SPICLK(1)
+ 8227 us (cyc: 125.5) event 83:
+		SPI.CS |=  | RXD(1)
+		DMA.DLEN |= LEN(0)
+		GPIO |=  | LEV11_SPICLK(0)
+ 8297 us (cyc: 126.6) event 84:
+		SPI.CS |=  | DONE(1)
+		DMA.DLEN <same>
+		GPIO |=  | LEV10_SPIMOSI(0)
+ 8722 us (cyc: 133.1): CHECKPOINT Disable SPI TA
+ 8726 us (cyc: 133.2) event 85:
+		SPI.CS |=  | DONE(0) | TA(0)
+		DMA.DLEN <same>
+		GPIO |=  | LEV8_SPICS0(1)

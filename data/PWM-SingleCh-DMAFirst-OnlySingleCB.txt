@@ -1,0 +1,2317 @@
+-2711 us (cyc: -5.4): CHECKPOINT Set PWM clock to 10MHz (via PLLD)
+-2621 us (cyc: -5.2): CHECKPOINT Reset PWM regs (CTL = 0, STA = 0xffff ffff)
+-2406 us (cyc: -4.8): CHECKPOINT Reset DMA (DMA6)
+-2338 us (cyc: -4.7): CHECKPOINT Set RNG to 10'000 (=>1 kHz)
+-2337 us (cyc: -4.7): CHECKPOINT Enable DMAC wth PANIC == DREQ == 1
+-2337 us (cyc: -4.7): CHECKPOINT Clear FIFO (CTL = CRLF)
+-2271 us (cyc: -4.5): CHECKPOINT MSEN1(Alg_M_S) + USEF1(Reg_FIFO)
+-2271 us (cyc: -4.5): CHECKPOINT Enable GPIO 12 to PWM0 (Alt0)
+-2268 us (cyc: -4.5): CHECKPOINT Make 1 element DMA CB chain (PWM value == 90%, 10%, 90% ....)
+-2267 us (cyc: -4.5): CHECKPOINT Start collection
+-2118 us (cyc: -4.2) event 0:
+		PWM.STA = STA2(0) | STA1(0) | BERR(0) | GAPO2(0) | GAPO1(0) | RERR1(0) | WERR1(0) | EMPT1(1) | FULL1(0)
+		PWM.CTL = MSEN2(Alg_PWM) | USEF2(Reg_Data) | POLA2(0) | SBIT2(0) | RPTL2(0) | MODE2(Mode_PWM) | PWEN2(0) | MSEN1(Alg_M_S) | CLRF(0) | USEF1(Reg_FIFO) | POLA1(0) | SBIT1(0) | RPTL1(0) | MODE1(Mode_PWM) | PWEN1(0)
+		DMA.CS = RESET(0) | ABORT(0) | DISDEBUG(0) | WAIT_FOR_OUTSTANDING_WRITES(0) | ERROR(0) | WAITING_FOR_OUTSTANDING_WRITES(0) | DREQ_STOPS_DMA(0) | PAUSED(0) | DREQ(1) | INT(0) | END(0) | ACTIVE(0) | PANIC_PRIORITY(0) | PRIORITY(0)
+		DMA.DEBUG = LITE(0) | READ_ERROR(0) | FIFO_ERROR(0) | READ_LAST_NOT_SET_ERROR(0) | VERSION(2) | DMA_STATE(1) | DMA_ID(134) | OUTSTANDING_WRITES(0)
+		GPIO =  | LEV12(0)
+-1058 us (cyc: -2.1): CHECKPOINT DMA Start
+-1057 us (cyc: 8589933.0): 0  DMA CB Completed
+-1053 us (cyc: -2.1) event 1:
+		PWM.STA |=  | EMPT1(0)
+		PWM.CTL <same>
+		DMA.CS |=  | DISDEBUG(1) | WAIT_FOR_OUTSTANDING_WRITES(1) | END(1) | PANIC_PRIORITY(8) | PRIORITY(8)
+		DMA.DEBUG <same>
+		GPIO <same>
+    0 us (cyc: 0.0): CHECKPOINT PWEN1
+    5 us (cyc: 0.0) event 2:
+		PWM.STA |=  | STA1(1) | EMPT1(1)
+		PWM.CTL |= MSEN2(Alg_PWM) | USEF2(Reg_Data) | MODE2(Mode_PWM) | MSEN1(Alg_M_S) | USEF1(Reg_FIFO) | MODE1(Mode_PWM) | PWEN1(1)
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+  903 us (cyc: 1.8) event 3:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+ 1002 us (cyc: 2.0) event 4:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+ 1905 us (cyc: 3.8) event 5:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+ 2004 us (cyc: 4.0) event 6:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+ 2901 us (cyc: 5.8) event 7:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+ 3004 us (cyc: 6.0) event 8:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+ 3906 us (cyc: 7.8) event 9:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+ 4003 us (cyc: 8.0) event 10:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+ 4905 us (cyc: 9.8) event 11:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+ 5002 us (cyc: 10.0) event 12:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+ 5904 us (cyc: 11.8) event 13:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+ 6006 us (cyc: 12.0) event 14:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+ 6902 us (cyc: 13.8) event 15:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+ 7005 us (cyc: 14.0) event 16:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+ 7903 us (cyc: 15.8) event 17:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+ 8006 us (cyc: 16.0) event 18:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+ 8906 us (cyc: 17.8) event 19:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+ 9003 us (cyc: 18.0) event 20:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+ 9901 us (cyc: 19.8) event 21:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+10004 us (cyc: 20.0) event 22:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+10901 us (cyc: 21.8) event 23:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+11004 us (cyc: 22.0) event 24:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+11901 us (cyc: 23.8) event 25:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+12004 us (cyc: 24.0) event 26:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+12901 us (cyc: 25.8) event 27:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+13004 us (cyc: 26.0) event 28:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+13903 us (cyc: 27.8) event 29:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+14005 us (cyc: 28.0) event 30:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+14905 us (cyc: 29.8) event 31:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+15002 us (cyc: 30.0) event 32:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+15905 us (cyc: 31.8) event 33:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+16002 us (cyc: 32.0) event 34:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+16906 us (cyc: 33.8) event 35:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+17003 us (cyc: 34.0) event 36:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+17906 us (cyc: 35.8) event 37:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+18003 us (cyc: 36.0) event 38:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+18904 us (cyc: 37.8) event 39:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+19002 us (cyc: 38.0) event 40:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+19902 us (cyc: 39.8) event 41:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+20005 us (cyc: 40.0) event 42:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+20902 us (cyc: 41.8) event 43:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+21004 us (cyc: 42.0) event 44:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+21904 us (cyc: 43.8) event 45:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+22002 us (cyc: 44.0) event 46:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+22904 us (cyc: 45.8) event 47:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+23006 us (cyc: 46.0) event 48:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+23906 us (cyc: 47.8) event 49:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+24004 us (cyc: 48.0) event 50:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+24901 us (cyc: 49.8) event 51:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+25005 us (cyc: 50.0) event 52:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+25901 us (cyc: 51.8) event 53:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+26004 us (cyc: 52.0) event 54:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+26902 us (cyc: 53.8) event 55:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+27005 us (cyc: 54.0) event 56:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+27903 us (cyc: 55.8) event 57:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+28006 us (cyc: 56.0) event 58:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+28904 us (cyc: 57.8) event 59:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+29002 us (cyc: 58.0) event 60:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+29901 us (cyc: 59.8) event 61:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+30004 us (cyc: 60.0) event 62:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+30904 us (cyc: 61.8) event 63:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+31006 us (cyc: 62.0) event 64:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+31901 us (cyc: 63.8) event 65:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+32004 us (cyc: 64.0) event 66:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+32904 us (cyc: 65.8) event 67:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+33006 us (cyc: 66.0) event 68:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+33903 us (cyc: 67.8) event 69:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+34006 us (cyc: 68.0) event 70:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+34907 us (cyc: 69.8) event 71:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+35002 us (cyc: 70.0) event 72:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+35904 us (cyc: 71.8) event 73:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+36005 us (cyc: 72.0) event 74:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+36904 us (cyc: 73.8) event 75:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+37006 us (cyc: 74.0) event 76:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+37908 us (cyc: 75.8) event 77:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+38007 us (cyc: 76.0) event 78:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+38902 us (cyc: 77.8) event 79:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+39005 us (cyc: 78.0) event 80:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+39902 us (cyc: 79.8) event 81:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+40004 us (cyc: 80.0) event 82:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+40906 us (cyc: 81.8) event 83:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+41006 us (cyc: 82.0) event 84:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+41904 us (cyc: 83.8) event 85:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+42005 us (cyc: 84.0) event 86:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+42901 us (cyc: 85.8) event 87:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+43004 us (cyc: 86.0) event 88:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+43903 us (cyc: 87.8) event 89:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+44006 us (cyc: 88.0) event 90:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+44905 us (cyc: 89.8) event 91:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+45008 us (cyc: 90.0) event 92:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+45902 us (cyc: 91.8) event 93:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+46002 us (cyc: 92.0) event 94:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+46901 us (cyc: 93.8) event 95:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+47003 us (cyc: 94.0) event 96:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+47907 us (cyc: 95.8) event 97:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+48001 us (cyc: 96.0) event 98:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+48901 us (cyc: 97.8) event 99:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+49002 us (cyc: 98.0) event 100:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+49903 us (cyc: 99.8) event 101:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+50004 us (cyc: 100.0) event 102:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+50906 us (cyc: 101.8) event 103:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+51007 us (cyc: 102.0) event 104:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+51908 us (cyc: 103.8) event 105:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+52001 us (cyc: 104.0) event 106:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+52902 us (cyc: 105.8) event 107:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+53003 us (cyc: 106.0) event 108:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+53902 us (cyc: 107.8) event 109:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+54003 us (cyc: 108.0) event 110:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+54905 us (cyc: 109.8) event 111:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+55006 us (cyc: 110.0) event 112:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+55905 us (cyc: 111.8) event 113:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+56006 us (cyc: 112.0) event 114:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+56906 us (cyc: 113.8) event 115:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+57007 us (cyc: 114.0) event 116:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+57905 us (cyc: 115.8) event 117:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+58006 us (cyc: 116.0) event 118:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+58907 us (cyc: 117.8) event 119:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+59003 us (cyc: 118.0) event 120:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+59906 us (cyc: 119.8) event 121:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+60008 us (cyc: 120.0) event 122:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+60905 us (cyc: 121.8) event 123:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+61006 us (cyc: 122.0) event 124:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+61904 us (cyc: 123.8) event 125:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+62005 us (cyc: 124.0) event 126:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+62907 us (cyc: 125.8) event 127:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+63008 us (cyc: 126.0) event 128:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+63906 us (cyc: 127.8) event 129:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+64007 us (cyc: 128.0) event 130:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+64907 us (cyc: 129.8) event 131:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+65002 us (cyc: 130.0) event 132:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+65904 us (cyc: 131.8) event 133:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+66007 us (cyc: 132.0) event 134:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+66908 us (cyc: 133.8) event 135:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+67005 us (cyc: 134.0) event 136:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+67903 us (cyc: 135.8) event 137:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+68006 us (cyc: 136.0) event 138:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+68904 us (cyc: 137.8) event 139:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+69008 us (cyc: 138.0) event 140:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+69901 us (cyc: 139.8) event 141:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+70003 us (cyc: 140.0) event 142:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+70903 us (cyc: 141.8) event 143:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+71004 us (cyc: 142.0) event 144:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+71905 us (cyc: 143.8) event 145:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+72007 us (cyc: 144.0) event 146:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+72905 us (cyc: 145.8) event 147:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+73007 us (cyc: 146.0) event 148:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+73904 us (cyc: 147.8) event 149:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+74003 us (cyc: 148.0) event 150:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+74908 us (cyc: 149.8) event 151:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+75005 us (cyc: 150.0) event 152:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+75905 us (cyc: 151.8) event 153:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+76001 us (cyc: 152.0) event 154:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+76906 us (cyc: 153.8) event 155:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+77002 us (cyc: 154.0) event 156:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+77905 us (cyc: 155.8) event 157:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+78002 us (cyc: 156.0) event 158:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+78902 us (cyc: 157.8) event 159:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+79006 us (cyc: 158.0) event 160:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+79902 us (cyc: 159.8) event 161:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+80006 us (cyc: 160.0) event 162:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+80902 us (cyc: 161.8) event 163:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+81008 us (cyc: 162.0) event 164:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+81906 us (cyc: 163.8) event 165:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+82002 us (cyc: 164.0) event 166:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+82901 us (cyc: 165.8) event 167:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+83004 us (cyc: 166.0) event 168:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+83903 us (cyc: 167.8) event 169:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+84006 us (cyc: 168.0) event 170:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+84908 us (cyc: 169.8) event 171:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+85004 us (cyc: 170.0) event 172:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+85909 us (cyc: 171.8) event 173:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+86007 us (cyc: 172.0) event 174:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+86901 us (cyc: 173.8) event 175:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+87008 us (cyc: 174.0) event 176:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+87907 us (cyc: 175.8) event 177:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+88002 us (cyc: 176.0) event 178:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+88907 us (cyc: 177.8) event 179:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+89002 us (cyc: 178.0) event 180:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+89907 us (cyc: 179.8) event 181:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+90001 us (cyc: 180.0) event 182:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+90901 us (cyc: 181.8) event 183:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+91007 us (cyc: 182.0) event 184:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+91906 us (cyc: 183.8) event 185:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+92008 us (cyc: 184.0) event 186:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+92904 us (cyc: 185.8) event 187:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+93005 us (cyc: 186.0) event 188:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+93908 us (cyc: 187.8) event 189:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+94001 us (cyc: 188.0) event 190:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+94909 us (cyc: 189.8) event 191:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+95004 us (cyc: 190.0) event 192:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+95905 us (cyc: 191.8) event 193:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+96009 us (cyc: 192.0) event 194:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+96906 us (cyc: 193.8) event 195:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+97008 us (cyc: 194.0) event 196:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+97906 us (cyc: 195.8) event 197:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+98007 us (cyc: 196.0) event 198:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+98902 us (cyc: 197.8) event 199:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+99001 us (cyc: 198.0) event 200:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+99903 us (cyc: 199.8) event 201:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+100001 us (cyc: 200.0) event 202:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+100902 us (cyc: 201.8) event 203:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+101002 us (cyc: 202.0) event 204:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+101908 us (cyc: 203.8) event 205:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+102010 us (cyc: 204.0) event 206:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+102907 us (cyc: 205.8) event 207:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+103003 us (cyc: 206.0) event 208:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+103908 us (cyc: 207.8) event 209:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+104004 us (cyc: 208.0) event 210:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+104903 us (cyc: 209.8) event 211:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+105006 us (cyc: 210.0) event 212:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+105907 us (cyc: 211.8) event 213:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+106001 us (cyc: 212.0) event 214:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+106902 us (cyc: 213.8) event 215:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+107004 us (cyc: 214.0) event 216:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+107906 us (cyc: 215.8) event 217:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+108007 us (cyc: 216.0) event 218:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+108907 us (cyc: 217.8) event 219:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+109007 us (cyc: 218.0) event 220:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+109903 us (cyc: 219.8) event 221:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+110004 us (cyc: 220.0) event 222:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+110903 us (cyc: 221.8) event 223:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+111004 us (cyc: 222.0) event 224:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+111906 us (cyc: 223.8) event 225:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+112006 us (cyc: 224.0) event 226:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+112906 us (cyc: 225.8) event 227:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+113007 us (cyc: 226.0) event 228:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+113907 us (cyc: 227.8) event 229:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+114008 us (cyc: 228.0) event 230:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+114904 us (cyc: 229.8) event 231:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+115005 us (cyc: 230.0) event 232:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+115906 us (cyc: 231.8) event 233:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+116006 us (cyc: 232.0) event 234:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+116906 us (cyc: 233.8) event 235:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+117001 us (cyc: 234.0) event 236:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+117905 us (cyc: 235.8) event 237:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+118005 us (cyc: 236.0) event 238:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+118901 us (cyc: 237.8) event 239:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+119004 us (cyc: 238.0) event 240:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+119909 us (cyc: 239.8) event 241:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+120004 us (cyc: 240.0) event 242:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+120906 us (cyc: 241.8) event 243:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+121001 us (cyc: 242.0) event 244:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+121905 us (cyc: 243.8) event 245:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+122007 us (cyc: 244.0) event 246:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+122906 us (cyc: 245.8) event 247:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+123009 us (cyc: 246.0) event 248:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+123906 us (cyc: 247.8) event 249:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+124009 us (cyc: 248.0) event 250:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+124904 us (cyc: 249.8) event 251:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+125007 us (cyc: 250.0) event 252:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+125903 us (cyc: 251.8) event 253:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+126005 us (cyc: 252.0) event 254:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+126904 us (cyc: 253.8) event 255:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+127006 us (cyc: 254.0) event 256:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+127904 us (cyc: 255.8) event 257:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+128005 us (cyc: 256.0) event 258:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+128903 us (cyc: 257.8) event 259:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+129004 us (cyc: 258.0) event 260:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+129901 us (cyc: 259.8) event 261:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+130006 us (cyc: 260.0) event 262:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+130902 us (cyc: 261.8) event 263:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+131003 us (cyc: 262.0) event 264:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+131904 us (cyc: 263.8) event 265:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+132005 us (cyc: 264.0) event 266:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+132906 us (cyc: 265.8) event 267:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+133006 us (cyc: 266.0) event 268:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+133906 us (cyc: 267.8) event 269:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+134002 us (cyc: 268.0) event 270:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+134905 us (cyc: 269.8) event 271:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+135002 us (cyc: 270.0) event 272:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+135902 us (cyc: 271.8) event 273:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+136007 us (cyc: 272.0) event 274:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+136903 us (cyc: 273.8) event 275:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+137003 us (cyc: 274.0) event 276:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+137902 us (cyc: 275.8) event 277:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+138002 us (cyc: 276.0) event 278:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+138903 us (cyc: 277.8) event 279:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+139002 us (cyc: 278.0) event 280:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+139901 us (cyc: 279.8) event 281:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+140002 us (cyc: 280.0) event 282:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+140901 us (cyc: 281.8) event 283:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+141002 us (cyc: 282.0) event 284:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+141903 us (cyc: 283.8) event 285:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+142003 us (cyc: 284.0) event 286:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+142903 us (cyc: 285.8) event 287:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+143004 us (cyc: 286.0) event 288:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+143905 us (cyc: 287.8) event 289:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+144005 us (cyc: 288.0) event 290:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+144905 us (cyc: 289.8) event 291:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+145005 us (cyc: 290.0) event 292:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+145901 us (cyc: 291.8) event 293:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+146003 us (cyc: 292.0) event 294:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+146902 us (cyc: 293.8) event 295:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+147004 us (cyc: 294.0) event 296:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+147902 us (cyc: 295.8) event 297:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+148003 us (cyc: 296.0) event 298:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+148903 us (cyc: 297.8) event 299:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+149002 us (cyc: 298.0) event 300:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+149905 us (cyc: 299.8) event 301:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+150004 us (cyc: 300.0) event 302:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+150905 us (cyc: 301.8) event 303:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+151004 us (cyc: 302.0) event 304:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+151902 us (cyc: 303.8) event 305:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+152006 us (cyc: 304.0) event 306:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+152902 us (cyc: 305.8) event 307:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+153001 us (cyc: 306.0) event 308:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+153905 us (cyc: 307.8) event 309:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+154002 us (cyc: 308.0) event 310:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+154904 us (cyc: 309.8) event 311:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+155002 us (cyc: 310.0) event 312:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+155903 us (cyc: 311.8) event 313:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+156005 us (cyc: 312.0) event 314:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+156906 us (cyc: 313.8) event 315:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+157001 us (cyc: 314.0) event 316:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+157904 us (cyc: 315.8) event 317:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+158004 us (cyc: 316.0) event 318:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+158904 us (cyc: 317.8) event 319:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+159001 us (cyc: 318.0) event 320:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+159902 us (cyc: 319.8) event 321:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+160006 us (cyc: 320.0) event 322:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+160905 us (cyc: 321.8) event 323:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+161002 us (cyc: 322.0) event 324:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+161902 us (cyc: 323.8) event 325:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+162007 us (cyc: 324.0) event 326:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+162901 us (cyc: 325.8) event 327:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+163001 us (cyc: 326.0) event 328:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+163903 us (cyc: 327.8) event 329:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+164003 us (cyc: 328.0) event 330:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+164906 us (cyc: 329.8) event 331:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+165004 us (cyc: 330.0) event 332:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+165905 us (cyc: 331.8) event 333:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+166005 us (cyc: 332.0) event 334:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+166903 us (cyc: 333.8) event 335:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+167003 us (cyc: 334.0) event 336:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+167905 us (cyc: 335.8) event 337:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+168002 us (cyc: 336.0) event 338:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+168903 us (cyc: 337.8) event 339:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+169002 us (cyc: 338.0) event 340:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+169906 us (cyc: 339.8) event 341:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+170005 us (cyc: 340.0) event 342:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+170902 us (cyc: 341.8) event 343:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+171005 us (cyc: 342.0) event 344:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+171901 us (cyc: 343.8) event 345:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+172005 us (cyc: 344.0) event 346:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+172906 us (cyc: 345.8) event 347:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+173007 us (cyc: 346.0) event 348:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+173902 us (cyc: 347.8) event 349:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+174005 us (cyc: 348.0) event 350:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+174902 us (cyc: 349.8) event 351:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+175006 us (cyc: 350.0) event 352:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+175902 us (cyc: 351.8) event 353:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+176003 us (cyc: 352.0) event 354:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+176906 us (cyc: 353.8) event 355:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+177005 us (cyc: 354.0) event 356:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+177904 us (cyc: 355.8) event 357:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+178003 us (cyc: 356.0) event 358:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+178904 us (cyc: 357.8) event 359:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+179004 us (cyc: 358.0) event 360:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+179903 us (cyc: 359.8) event 361:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+180004 us (cyc: 360.0) event 362:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+180904 us (cyc: 361.8) event 363:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+181004 us (cyc: 362.0) event 364:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+181905 us (cyc: 363.8) event 365:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+182002 us (cyc: 364.0) event 366:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+182905 us (cyc: 365.8) event 367:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+183005 us (cyc: 366.0) event 368:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+183903 us (cyc: 367.8) event 369:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+184003 us (cyc: 368.0) event 370:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+184906 us (cyc: 369.8) event 371:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+185002 us (cyc: 370.0) event 372:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+185906 us (cyc: 371.8) event 373:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+186006 us (cyc: 372.0) event 374:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+186905 us (cyc: 373.8) event 375:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+187004 us (cyc: 374.0) event 376:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+187905 us (cyc: 375.8) event 377:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+188003 us (cyc: 376.0) event 378:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+188902 us (cyc: 377.8) event 379:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+189004 us (cyc: 378.0) event 380:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+189901 us (cyc: 379.8) event 381:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
+190003 us (cyc: 380.0) event 382:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(1)
+190906 us (cyc: 381.8) event 383:
+		PWM.STA <same>
+		PWM.CTL <same>
+		DMA.CS <same>
+		DMA.DEBUG <same>
+		GPIO |=  | LEV12(0)
