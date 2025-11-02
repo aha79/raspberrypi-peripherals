@@ -137,15 +137,17 @@ This bit means that the rx-fifo is non-empty, i.e. contains at least one byte.
 ### DC.RDREQ
 The fifo level at which a read DREQ signal is generated. The datasheet is accurate that
 
-    RX-DREQ = ( number-of-bytes-in-rx-fifo > RDREQ )
+    RX-DREQ = ( number-of-bytes-in-rx-fifo > RDREQ ) || (DMAEN == 1 && DLEN == 0 && number-of-bytes-in-rx-fifo > 0)
 
 Note that the fifos are bytewise fifos. They are written byte by byte from the spi engine. 
 When a 8 bit transfer is complete the byte will be pushed to the fifo. This is irrespective on how long the whole transfer is.
 Whenever 8 bits are received a byte will be added to the fifo. This happens right after the clock transition at which the 
-8-th bit is received. It does not necessarily wait for the clock cycle to complete.
+8-th bit is received. It does not wait for the clock cycle to complete (which is half a clock cycle later).
 
 When the rx-fifo is non-empty the RXD bit is set.
 So for a 16 bit transfer, the RXD bit will become set after 8 bits have been received. 
+
+With DMAEN == 1 the RX-DREQ will also be set when DLEN reaches 0. This happens as soon as the last byte is received. So it also happens half a clock cycle before the DONE bit is set (and in case of ADCS also TA is cleared).
 
 ### DC.TDREQ
 The fifo level at which a write DREQ signal is generated. The datasheet is accurate that
