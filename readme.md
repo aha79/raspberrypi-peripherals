@@ -261,3 +261,59 @@ The repeat last word functionality seems broken, as it apparently does not work 
 
 - Contrary to one channel operation the RPTL=0 is working for two channel case: the PWM stops after N'th sample and sets STA.STA2=STA.STA1=0 (as well as sets STA.GAPO2=STA:GAPO1=1 to indicate gaps during transfer.
 The CTL.RPTL1=CTL.RPTL2=1 are not supported in two channel mode.
+
+## DMA Controller (RP4)
+
+### DMA transfer speed and influence of wait cycles setting
+
+![dma speed](dmaspeed.svg)
+
+Result is average of 100 runs with 10240, 32 bit words transferred. Time is shown for a single 32 bit transfer.
+
+`mem` means reading / writing to memory. ` periph` is reading from the System Timer CLO register, `null` means with SRC_IGNORE or DEST_IGNORE flag set in the DMA CB.
+
+The point at WAITS = 0 is given by
+| trace | value at WAITS=0 | explanation | flags |
+| ------ | ------- | ------ | ----- |
+| peri2mem |  19.6 cycles | read from peripheral (System timer) and write to memory | NO_WIDE_BURST+ WAIT_RESP+DEST_INC |
+| peri2null |  10.8 cycles | read from peripheral (System timer)| NO_WIDE_BURST+ WAIT_RESP+DEST_INC+DEST_IGNORE |
+| null2mem |  11.9 cycles |  write to memory | DEST_INC+SRC_IGNORE |
+| mem2mem | 73.1 cycles | read from memory and write to other memory location | SRC_INC+DEST_INC |
+| mem2null |  61.6 cycles | read from memory | SRC_INC+DEST_IGNORE|
+
+
+Unit is in clock cycles of the 500 MHz system cloc (so one cycle equals 2 ns). System was set to performance mode so that system clock is not adjusted during runs.
+
+Observations:
+ - wait cycles are in units of system clock of 500 MHz (2 ns). So WAITS==31 adds 124 ns additional delay unless SRC_IGNORE or DEST_IGNORE is set, in which case only 62 ns additional delay is added. Likely there is an additional (undocumented) cycle so that it is really 128 ns and 64 ns additional wait time for for WAITS==31.
+ - the datasheet is correct that a wait cycle happens at *both* reads *and* writes. This is evident from the slope of 1 or 2 in the graph wth DEST_IGNORE or SRC_IGNORE being set.
+ - depending on the nature of the operation (read/write from memory or peripherial) the time for the transfer may be much higher than the waiting. This is especially the case if a read from memory happens.
+ - the DMA controller seems to execute read and writes in parallel when SRC_INC and DEST_INC is set. This is evident from the mem2mem and null2mem traces. Consecutive reads and writes apparently are executed in parallel. That is why mem2mem has a slope of 1 before it transitions to a slope of 2 in the graph. For null2mem this is obvious from the constant offset.
+  - the dma controller seems to wait for one additional cycle if WAITS > 0. The curves are much more linear when we assume the additional wait cycles to be one more (see below). So if WAITS is nonzero, the number of actual additonal wait cycles per read and write is really WAITS+1.
+
+We can see from the figure that the linear fit is much better for the first point.
+
+The fit for the point is much better at WAITS==0 when assuming one additional wait cycle:
+![dma speed with assuming WAITS+1](dmaspeed-shifted.svg)
+
+
+### Time for loading a DMA CB
+
+Test case: have a chain of 10240 DMA CBs where each CB does a certain number of 32bi transfers. 
+
+Time per CB versus the number of 32bit transfers in each CB:
+![dma speed of one CB](dmacbspeed.svg)
+
+First two data points are
+| type | time @ TXLEN==0 | time @ TXLEN==4 |
+| ---- | ---- | ---- | 
+| peri2null | 78.3 cycles |   81.6 cycles |
+| mem2null  | 137.4 cycles |   139.4 cycles |
+|mem2null-noburst| 141.0 cycles   | 142.7 cycles|
+|mem2null-noburst-wait| 136.6 cycles  |  147.6 cycles|
+
+Observations:
+ - Loading a CB takes approximately 72 clock cycles (144 ns). 
+ - Even with TXLEN == 0 in the CB the DMA controller performs one transfer. TXLEN == 4 seems minimum. 
+ - Loading a full CB (which is 6 x 32 bit words) is only slightly longer than doing a single 32bit memory read via DMA (~ 72 cycles vs. ~62 cycles), but about 6 times longer than doing a single peripheral read (11 cycles).
+ 
